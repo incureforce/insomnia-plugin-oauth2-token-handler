@@ -1,0 +1,18 @@
+{
+  "name": "insomnia-plugin-oauth2-token-handler",
+  "version": "0.0.1",
+  "private": true,
+  "insomnia": {
+    "name": "OAuth 2 Token Handler",
+    "description": "Helps you to keep track of your OAuth2 tokens and stores them based on environment ID (but not not in the environment itself)"
+  },
+  "images": {
+    "icon": "icon.png",
+    "cover": "cover.png"
+  },
+  "publisher": {
+    "name": "incureforce",
+    "icon": "team.png"
+  },
+  "main": "plugin.js"
+}
