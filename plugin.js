@@ -33,9 +33,10 @@ let tokenTag = {
 let tokenHook = function (arg) {
     let request = arg.request
     let requestURI = new URL(request.getUrl())
-    if (requestURI.href.endsWith("/oauth2/v2.0/token")) {
+    let environment = request.getEnvironment()
+    let endsWith = (typeof environment.oauth_token_finder_endsWith === 'undefined') ? "/oauth2/v2.0/token" : environment.oauth_token_finder_endsWith
+    if (requestURI.href.endsWith(endsWith)) {
         let response = arg.response
-        let environment = request.getEnvironment()
         let responseBody = response.getBody()
         
         let responseContent = JSON.parse(responseBody.toString('utf-8'))
